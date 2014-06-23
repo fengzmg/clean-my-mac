@@ -30,13 +30,10 @@ rm -rf /Users/Feng/Pictures/iPhoto\ Library/iPod\ Photo\ Cache/*
 echo "done cleaning from /Users/Feng/Pictures/iPhoto Library/iPod Photo Cache"
 #application caches
 echo "cleaning application caches"
-rm -rf ~/Library/Containers/com.apple.iBooksX/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.apple.appstore/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.evernote.Evernote/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.apple.iChat/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.apple.iPhoto/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.apple.CalendarAgent/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.apple.photostream-agent/Data/Library/Caches/*
-rm -rf ~/Library/Containers/com.apple.Preview/Data/Library/Caches/*
+for x in $(ls ~/Library/Containers/) 
+do 
+    echo "cleaning ~/Libarary/Containers/$x/Data/Library/Caches"
+    rm -rf  rm -rf ~/Library/Containers/$x/Data/Library/Caches/*
+    echo "done cleaning ~/Library/Containers/$x/Data/Library/Caches"
+done
 echo "done cleaning for application caches"
