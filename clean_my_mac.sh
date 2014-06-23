@@ -33,7 +33,7 @@ echo "cleaning application caches"
 for x in $(ls ~/Library/Containers/) 
 do 
     echo "cleaning ~/Libarary/Containers/$x/Data/Library/Caches"
-    rm -rf  rm -rf ~/Library/Containers/$x/Data/Library/Caches/*
+    rm -rf ~/Library/Containers/$x/Data/Library/Caches/*
     echo "done cleaning ~/Library/Containers/$x/Data/Library/Caches"
 done
 echo "done cleaning for application caches"
