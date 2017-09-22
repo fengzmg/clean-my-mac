@@ -32,7 +32,7 @@ echo "done cleaning from /Users/Feng/Pictures/iPhoto Library/iPod Photo Cache"
 echo "cleaning application caches"
 for x in $(ls ~/Library/Containers/) 
 do 
-    echo "cleaning ~/Libarary/Containers/$x/Data/Library/Caches"
+    echo "cleaning ~/Library/Containers/$x/Data/Library/Caches/"
     rm -rf ~/Library/Containers/$x/Data/Library/Caches/*
     echo "done cleaning ~/Library/Containers/$x/Data/Library/Caches"
 done
