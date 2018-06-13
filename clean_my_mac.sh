@@ -26,8 +26,8 @@ sudo rm -rf /private/var/folders/*
 echo "done cleaning from /private/var/folders"
 #ios photo caches
 echo "cleaning ios photo caches"
-rm -rf /Users/Feng/Pictures/iPhoto\ Library/iPod\ Photo\ Cache/*
-echo "done cleaning from /Users/Feng/Pictures/iPhoto Library/iPod Photo Cache"
+rm -rf ~/Pictures/iPhoto\ Library/iPod\ Photo\ Cache/*
+echo "done cleaning from ~/Pictures/iPhoto Library/iPod Photo Cache"
 #application caches
 echo "cleaning application caches"
 for x in $(ls ~/Library/Containers/) 
