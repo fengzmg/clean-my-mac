@@ -1,23 +1,22 @@
-#user cache file
-echo "cleaning user cache file from ~/Library/Caches"
-rm -rf ~/Library/Caches/*
-echo "done cleaning from ~/Library/Caches"
-#user logs
-echo "cleaning user log file from ~/Library/logs"
-rm -rf ~/Library/logs/*
-echo "done cleaning from ~/Library/logs"
+guardedApps=(JetBrains) #You can add apps by space like (JetBrains ExampleApp1 ExampleApp2)
+
+for guardedApp in "${guardedApps[@]}"; do
+    guardedAppsString+="! -name '$guardedApp' "
+done
+
+#user and system cache & log locations
+guardedLocations=("~/Library/Caches" "~/Library/logs" "/Library/Caches" "/Library/logs")
+for guardedLocation in "${guardedLocations[@]}"; do
+    echo "cleaning files from ${guardedLocation}"
+    eval "find ${guardedLocation} -mindepth 1 -maxdepth 1 ${guardedAppsString}-exec rm -rf {} +"
+    echo "done cleaning files from ${guardedLocation}"
+done
+
 #user preference log
 echo "cleaning user preference logs"
 #rm -rf ~/Library/Preferences/*
 echo "done cleaning from /Library/Preferences"
-#system caches
-echo "cleaning system caches"
-sudo rm -rf /Library/Caches/*
-echo "done cleaning system cache"
 #system logs
-echo "cleaning system logs from /Library/logs"
-sudo rm -rf /Library/logs/*
-echo "done cleaning from /Library/logs"
 echo "cleaning system logs from /var/log"
 sudo rm -rf /var/log/*
 echo "done cleaning from /var/log"
